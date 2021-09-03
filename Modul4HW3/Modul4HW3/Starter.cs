@@ -10,15 +10,17 @@ namespace Modul4HW3
 {
     public class Starter
     {
+        private AppConfigService _appConfig = new AppConfigService();
+
         public void Run()
         {
             var dbContext = new DbContextOptionsBuilder<ApplicationContext>();
-            dbContext.UseSqlServer("Server = localhost,1433; Database = HW4_db; User = sa; Password = Passw0rd;");
+            dbContext.UseSqlServer(_appConfig.ConnectionString);
             using (var db = new ApplicationContext(dbContext.Options))
             {
             }
 
-            Console.WriteLine("END");
+            Console.WriteLine("Finish");
         }
     }
 }

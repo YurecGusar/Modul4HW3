@@ -1,0 +1,1 @@
+{ "ConnectionString": "Server = localhost,1433; Database = HW4_db; User = sa; Password = Passw0rd;" }

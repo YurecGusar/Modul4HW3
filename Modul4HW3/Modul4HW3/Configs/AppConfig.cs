@@ -8,5 +8,6 @@ namespace Modul4HW3.Configs
 {
     public class AppConfig
     {
+       public string ConnectionString { get; set; }
     }
 }
