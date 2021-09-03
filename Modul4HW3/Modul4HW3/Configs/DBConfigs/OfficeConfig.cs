@@ -5,14 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Modul4HW3.Models;
 
 namespace Modul4HW3.Configs.DBConfigs
 {
-    public class OfficeConfig : IEntityTypeConfiguration<OfficeConfig>
+    public class OfficeConfig : IEntityTypeConfiguration<Office>
     {
-        public void Configure(EntityTypeBuilder<OfficeConfig> builder)
+        public void Configure(EntityTypeBuilder<Office> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(a => a.OfficeId);
+            builder.Property(a => a.OfficeId).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(a => a.Title).IsRequired().HasColumnType("nvarchar").HasMaxLength(100);
+            builder.Property(a => a.Location).IsRequired().HasColumnType("nvarchar").HasMaxLength(100);
         }
     }
 }

@@ -17,6 +17,10 @@ namespace Modul4HW3.Services
         }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeProject> EmployeeProjects { get; set; }
+        public DbSet<Office> Offices { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Title> Titles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
