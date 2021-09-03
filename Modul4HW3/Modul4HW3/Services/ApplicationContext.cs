@@ -11,7 +11,8 @@ namespace Modul4HW3.Services
 {
     public class ApplicationContext : DbContext
     {
-        public ApplicationContext()
+        public ApplicationContext(DbContextOptions<ApplicationContext> options)
+            : base(options)
         {
             Database.EnsureCreated();
         }
